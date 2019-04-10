@@ -25,6 +25,11 @@ gem 'puma', '~> 3.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# ActiveAdmin
+gem 'active_admin_theme', '~> 1.0', '>= 1.0.3'
+gem 'activeadmin', '~> 1.4', '>= 1.4.3'
+gem 'devise', '~> 4.6', '>= 4.6.2'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
