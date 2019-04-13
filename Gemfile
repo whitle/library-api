@@ -31,7 +31,9 @@ gem 'activeadmin', '~> 1.4', '>= 1.4.3'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
+
+gem 'httparty', '~> 0.16.4'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'

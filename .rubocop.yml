@@ -1,0 +1,27 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'config/initializers/devise.rb'
+    - 'lib/tasks/auto_annotate_models.rake'
+
+# Default 80
+Metrics/LineLength:
+  Max: 120
+
+# Default 10
+Metrics/MethodLength:
+  Max: 20
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+# Do not enforce documentation rules
+Style/Documentation:
+  Enabled: false
