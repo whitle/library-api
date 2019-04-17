@@ -11,7 +11,10 @@ Rails.application.routes.draw do
         post 'google', to: 'google#authenticate_user'
       end
 
-      resources :books
+      namespace :books do
+        post 'not_assigned', to: 'books#not_assigned_books'
+        post 'assign', to: 'books#assign_book'
+      end
     end
   end
 end

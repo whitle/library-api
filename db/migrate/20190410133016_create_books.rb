@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBooks < ActiveRecord::Migration[5.2]
   def change
     create_table :books do |t|
@@ -5,7 +7,6 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string  :title
       t.string  :author
       t.integer :pages
-      t.boolean :public
 
       t.timestamps
     end
