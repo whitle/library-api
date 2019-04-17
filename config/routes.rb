@@ -14,7 +14,12 @@ Rails.application.routes.draw do
       namespace :books do
         post 'not_assigned', to: 'books#not_assigned_books'
         post 'assign', to: 'books#assign_book'
+
+        post 'assigned', to: 'books#assigned_books'
+        post 'date_of_reading', to: 'books#date_of_reading_book'
       end
+
+      post 'user_profile', only: :index
     end
   end
 end

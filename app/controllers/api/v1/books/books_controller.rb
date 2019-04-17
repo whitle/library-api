@@ -17,7 +17,7 @@ module Api
 
         def assign_book
           @book = Book.find_by(id: params[:book_id])
-          if @user && can_book_be_assigbed?
+          if can_book_be_assigbed_to_user?
             @user.assigned_books.create(book: @book)
             render json: {}, status: :ok
           else
@@ -25,10 +25,21 @@ module Api
           end
         end
 
+        def assigned_books
+          if @user
+            render json: Book.where(id: @user.assigned_books.pluck(:book_id)), status: :ok
+          else
+            render json: {}, status: :unauthorized
+          end
+        end
+
+        def date_of_reading_book
+        end
+
         private
 
-        def can_book_be_assigbed?
-          @book && @user.assigned_books.where(book: @book).blank?
+        def can_book_be_assigbed_to_user?
+          @user && @book && @user.assigned_books.where(book: @book).blank?
         end
 
         def init_user
