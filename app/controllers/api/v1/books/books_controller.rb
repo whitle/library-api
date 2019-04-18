@@ -9,7 +9,7 @@ module Api
 
         def not_assigned_books
           if @user
-            render json: Book.where.not(id: @user.assigned_books.pluck(:book_id)), status: :ok
+            render json: Book.where.not(id: @user.books), status: :ok
           else
             render json: {}, status: :unauthorized
           end
@@ -27,7 +27,7 @@ module Api
 
         def assigned_books
           if @user
-            render json: Book.where(id: @user.assigned_books.pluck(:book_id)), status: :ok
+            render json: @user.books, status: :ok
           else
             render json: {}, status: :unauthorized
           end

@@ -2,6 +2,6 @@
 
 class Book < ApplicationRecord
   # Relations
-  belongs_to :user
-  has_many :assigned_to_users, class_name: 'AssignedBook'
+  has_many :assigned_books
+  has_many :users, through: :assigned_books
 end
