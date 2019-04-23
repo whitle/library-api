@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
         post 'assigned', to: 'books#assigned_books'
         post 'date_of_reading', to: 'books#date_of_reading_book'
+
+        post 'own', to: 'books#own_books'
+        post 'add', to: 'books#add_book'
       end
 
       post 'user_profile', only: :index
