@@ -86,7 +86,7 @@ module Api
           @assigned_books = if own_user_book? && can_book_be_assigbed_to_user?
                               @user.assigned_books.create(book: @book)
                             else
-                              @user.assigned_books.where(book: @book)
+                              @user.assigned_books.find_by(book: @book)
                             end
         end
 
